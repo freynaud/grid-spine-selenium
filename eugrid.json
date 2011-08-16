@@ -1,0 +1,102 @@
+{
+	"templates" :
+	[
+	{
+		"name" : "linux",
+		"request":
+			{
+			  "capabilities":
+			      [
+				{
+				  "browserName": "firefox",
+				  "version": "3.6",
+				  "maxInstances": 5,
+				  "firefox_binary":"/home/euqe/firefox3.6/firefox" 
+				},
+				 {
+				  "browserName": "firefox",
+				  "version": "4.0",
+				  "maxInstances": 5,
+				  "firefox_binary":"/home/euqe/firefox4.0/firefox" 
+				},
+				 {
+				  "browserName": "firefox",
+				  "version": "5.0",
+				  "maxInstances": 5,
+				  "firefox_binary":"/home/euqe/firefox5.0/firefox" 
+				},
+				{
+				  "browserName": "chrome",
+				  "maxInstances": 5,
+				  "version": "13",
+				}
+			      ],
+			  "configuration":
+			  {
+			    "proxy": "com.ebay.spine.LinuxWebDriverVNCProxy",
+			    "maxSession": 5,
+			    "maxTestBeforeClean": 50,
+			    "cleanSnapshot":"ok",
+			    "cleanUpCycle": 15000,
+			    "timeout": 30000,
+			    "seleniumPath": "/home/euqe/share/file/selenium-server-standalone-2.4.0.jar",
+			    "webdriver.chrome.driver": "/home/euqe/share/file/chromedriver",
+			    "sshUser": "****",
+			    "sshPAssword": "****",
+			    "vncPass":"****",
+			    "maxDisplay": 5,
+			  }
+			}
+	},
+	{
+		"name":"win7",
+		"request":
+			{
+			"capabilities":
+			      [
+				{
+				  "browserName": "firefox",
+				  "version": "3.6",
+				  "maxInstances": 5,
+				  "firefox_binary":"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe", 
+				  "platform":"WINDOWS",
+				},
+				 {
+				  "browserName": "firefox",
+				  "version": "4.0",
+				  "maxInstances": 5,
+				  "firefox_binary":"C:\\Program Files (x86)\\Mozilla Firefox4\\firefox.exe", 
+				  "platform":"WINDOWS",
+				},
+				{
+				  "browserName": "chrome",
+				  "maxInstances": 5,
+				  "version": "15",
+				  "platform":"WINDOWS",
+				},
+				{
+				  "browserName": "internet explorer",
+				  "maxInstances": 1,
+				  "version": "8.0",
+				  "platform":"WINDOWS",
+				}
+			      ],
+			  "configuration":
+			  {
+			    "proxy": "com.ebay.spine.WindowsWebDriverVNCProxy",
+			    "maxSession": 5,
+			    "maxTestBeforeClean": 50,
+			    "cleanSnapshot":"ok",
+			    "cleanUpCycle": 15000,
+			    "timeout": 30000,
+			    "seleniumPath": "Z:\\file\\selenium-server-standalone-2.4.0.jar",
+			    "webdriver.chrome.driver": "Z:\\file\\chromedriver.exe",
+			     "vncPass":"****",
+			  }
+			}
+	}
+	]
+}
+
+
+

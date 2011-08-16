@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+	<!-- an appender is an output destination, such as e.g. the console or a 
+		file; names of appenders are arbitrarily chosen -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%X{testCaseName} - %d{ABSOLUTE} %5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	<appender name="APPLOGFILE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/home/euqe/grid.log" />
+		<param name="Append" value="true" />
+		<param name="MaxFileSize" value="3000KB" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{DATE} %-5p %-15c{1}: %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.ebay.spine">
+		<level value="debug" />
+	</logger>
+
+	<logger name="org.openqa.grid">
+		<level value="debug" />
+	</logger>
+
+
+	<root><!-- the root category -->
+		<!-- all log messages of level debug or more serious will be logged, unless 
+			defined otherwise -->
+		<!-- all log messages will be logged to the appender 'stdout', unless defined 
+			otherwise -->
+		<level value="info" />
+		<appender-ref ref="APPLOGFILE" />
+		<appender-ref ref="stdout" />
+	</root>
+</log4j:configuration>
